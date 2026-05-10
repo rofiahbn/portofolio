@@ -416,25 +416,13 @@ document.addEventListener('keydown', (e) => {
    11. CONTACT FORM
    ============================================ */
 function handleFormSubmit(e) {
-  e.preventDefault();
   const btn = e.target.querySelector('.btn-send');
-  const success = document.getElementById('formSuccess');
 
-  // Simple loading state
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.innerHTML =
+    '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
   btn.disabled = true;
-
-  // Simulate API call (replace with actual form service like Formspree/EmailJS)
-  setTimeout(() => {
-    btn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
-    btn.disabled = false;
-    success.style.display = 'flex';
-    e.target.reset();
-    // Hide success after 5 seconds
-    setTimeout(() => { success.style.display = 'none'; }, 5000);
-  }, 1800);
 }
-
 
 /* ============================================
    12. MICRO INTERACTIONS
