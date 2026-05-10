@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rofi'ah Budi Nadia — Informatics Graduate | Fullstack Web Developer | Data Science Enthusiast. Published IEEE researcher and first-place data science competition winner." />
+  <meta name="keywords" content="fullstack developer, data science, backend, PHP, Python, SQL, Machine Learning, portfolio, Telkom University" />
+  <meta name="author" content="Rofi'ah Budi Nadia" />
+  <meta property="og:title" content="Rofi'ah Budi Nadia — Developer & Data Portfolio" />
+  <meta property="og:description" content="Building systems. Publishing research. Winning competitions." />
+  <meta property="og:type" content="website" />
+  <title>Rofi'ah Budi Nadia — Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-mode" data-theme="dark">
+
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">RN</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text">Loading portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>RN<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#certificates" class="nav-link">Certs & Awards</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun" id="themeIcon"></i>
+        </button>
+        <button class="nav-cta" onclick="scrollToSection('contact')">Hire Me</button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="badge-dot"></span>
+          Open to new opportunities
+        </div>
+        <h1 class="hero-name reveal">
+          <span class="name-line">Rofi'ah</span>
+          <span class="name-line accent-gold">Budi Nadia.</span>
+        </h1>
+        <div class="hero-title reveal">
+          <span class="title-prefix">I build </span>
+          <span class="typing-text" id="typingText"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-tagline reveal">
+          Exploring data, systems, and digital innovation.<br />
+          <span class="tagline-sub">Informatics Graduate · Telkom University · Sragen, Central Java</span>
+        </p>
+        <div class="hero-stats reveal">
+          <div class="stat-item">
+            <span class="stat-number" data-count="1">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="6">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Awards</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="1">0</span>
+            <span class="stat-label" style="white-space:nowrap">IEEE Paper</span>
+          </div>
+        </div>
+        <div class="hero-cta reveal">
+          <button class="btn-primary" onclick="scrollToSection('projects')">
+            <span>View Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <button class="btn-ghost" onclick="scrollToSection('contact')">
+            <span>Contact Me</span>
+          </button>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring"></div>
+          <div class="avatar-ring ring-2"></div>
+          <div class="avatar-frame">
+            <div class="avatar-placeholder">
+              <div class="avatar-initials">RN</div>
+              <div class="avatar-glow"></div>
+            </div>
+          </div>
+          <div class="floating-chip chip-1">
+            <i class="fas fa-code"></i> PHP & MySQL
+          </div>
+          <div class="floating-chip chip-2">
+            <i class="fab fa-python"></i> Python
+          </div>
+          <div class="floating-chip chip-3">
+            <i class="fab fa-js"></i> Javascript
+          </div>
+          <div class="floating-chip chip-4">
+            <i class="fas fa-trophy"></i> Machine Learning
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">01 · About</span>
+        <h2 class="section-title">The Story<br /><em>Behind the Code</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-lead">
+            Hi, I'm Rofi'ah — an Informatics graduate from Telkom University (GPA 3.68/4.00, Outstanding Graduate Award) with hands-on experience delivering full-stack web systems in live production environments.
+          </p>
+          <p class="about-body">
+            I've built a vaccination clinic management system and an English e-learning platform end-to-end using PHP, MySQL, HTML, and CSS — both shipped to real users at GoAR Global. I thrive on full ownership: from requirements analysis and database design to backend logic and frontend build.
+          </p>
+          <p class="about-body">
+            Beyond development, I'm a published IEEE researcher and a first-place data science competition winner. I'm actively seeking roles in backend engineering, application operations, system reliability, or data.
+          </p>
+          <div class="about-goals">
+            <div class="goal-item">
+              <div class="goal-icon"><i class="fas fa-bullseye"></i></div>
+              <div>
+                <strong>Career Goal</strong>
+                <p>Join a team where I can build reliable, scalable systems — backend engineering, data, or application operations.</p>
+              </div>
+            </div>
+            <div class="goal-item">
+              <div class="goal-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <strong>Education</strong>
+                <p>S1 Informatika — Telkom University, 2025 · GPA 3.68/4.00 · Outstanding Graduate Award (Faculty Level)</p>
+              </div>
+            </div>
+            <div class="goal-item">
+              <div class="goal-icon"><i class="fas fa-globe"></i></div>
+              <div>
+                <strong>Language</strong>
+                <p>Indonesian (Native) · English (Professional Working Proficiency — General English Programme, Pare · Excellent)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-strengths reveal">
+          <h3 class="strengths-title">Core Strengths</h3>
+          <div class="strength-cards">
+            <div class="strength-card">
+              <div class="sc-icon"><i class="fas fa-server"></i></div>
+              <strong>Full-Stack Delivery</strong>
+              <p>End-to-end ownership from DB design to deployed frontend — shipped to real users.</p>
+            </div>
+            <div class="strength-card">
+              <div class="sc-icon"><i class="fas fa-brain"></i></div>
+              <strong>ML Research</strong>
+              <p>IEEE-published. Competed and won 1st nationally in data science classification.</p>
+            </div>
+            <div class="strength-card">
+              <div class="sc-icon"><i class="fas fa-sitemap"></i></div>
+              <strong>Database Design</strong>
+              <p>Normalised schemas, ERD modelling, and validation logic for production systems.</p>
+            </div>
+            <div class="strength-card">
+              <div class="sc-icon"><i class="fas fa-users"></i></div>
+              <strong>Leadership</strong>
+              <p>Coordinated 10+ events as Liaison Officer; 95% satisfaction in student onboarding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">02 · Skills</span>
+        <h2 class="section-title">Tools &amp; <em>Technologies</em></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skills-col reveal">
+          <h3 class="skills-col-title">Technical Skills</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fas fa-database"></i> MySQL / SQL</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fas fa-code"></i> PHP</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fas fa-project-diagram"></i> Database Design / ERD</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fab fa-html5"></i> HTML / CSS</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fas fa-robot"></i> Machine Learning (Naive Bayes, SVM)</span>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fab fa-golang"></i> Golang</span>
+                <span class="skill-pct">60%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="60"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-col reveal">
+          <h3 class="skills-col-title">Stack & Tools</h3>
+          <div class="tech-grid">
+            <div class="tech-card"><i class="fas fa-code"></i><span>PHP</span></div>
+            <div class="tech-card"><i class="fas fa-database"></i><span>MySQL</span></div>
+            <div class="tech-card"><i class="fab fa-python"></i><span>Python</span></div>
+            <div class="tech-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
+            <div class="tech-card"><i class="fab fa-golang"></i><span>Golang</span></div>
+            <div class="tech-card"><i class="fab fa-git-alt"></i><span>Git</span></div>
+            <div class="tech-card"><i class="fab fa-figma"></i><span>Figma</span></div>
+            <div class="tech-card"><i class="fas fa-sitemap"></i><span>ERD</span></div>
+            <div class="tech-card"><i class="fas fa-brain"></i><span>Scikit-learn</span></div>
+            <div class="tech-card"><i class="fas fa-layer-group"></i><span>Notion</span></div>
+            <div class="tech-card"><i class="fas fa-infinity"></i><span>Trello</span></div>
+          </div>
+
+          <h3 class="skills-col-title" style="margin-top:2.5rem">Soft Skills</h3>
+          <div class="soft-skills">
+            <span class="soft-tag">System Debugging</span>
+            <span class="soft-tag">Database Architecture</span>
+            <span class="soft-tag">Agile / Sprint</span>
+            <span class="soft-tag">Stakeholder Communication</span>
+            <span class="soft-tag">Research & Academic Writing</span>
+            <span class="soft-tag">Event Coordination</span>
+            <span class="soft-tag">Technical Documentation</span>
+            <span class="soft-tag">Fast Learner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">03 · Projects</span>
+        <h2 class="section-title">Featured <em>Work</em></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-image">
+
+            <div class="project-img-placeholder">
+              <img src="assets/birthday.png" alt="Birthday Website Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">Creative Web · Interactive</span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              Interactive Birthday Surprise Website
+            </h3>
+
+            <p class="project-desc">
+              Designed and developed an interactive birthday-themed website featuring animated sections, personalized messages, music integration, responsive layouts, and immersive storytelling elements to create a memorable digital experience.
+            </p>
+
+            <div class="project-tools">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+              <span>Animation</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://nabilasbirthday.my.id/" target="_blank" class="btn-project">
+                <span>Visit Website</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-image">
+            
+            <div class="project-img-placeholder">
+              <img src="assets/dashboard1.png" alt="Portfolio Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">Personal Branding · Web</span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              Personal Portfolio Website
+            </h3>
+
+            <p class="project-desc">
+              Designed and developed a responsive personal portfolio website to showcase projects, certifications, achievements, publications, and professional experiences with interactive and modern UI components.
+            </p>
+
+            <div class="project-tools">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>GitHub Pages</span>
+              <span>Responsive Design</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://rofiahbn.github.io/" target="_blank" class="btn-project">
+                <span>Visit Website</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-image">
+
+            <div class="project-img-placeholder">
+              <img src="assets/rakamin-project.png" alt="Rakamin Hiring Platform Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">Product Management · AI Concept</span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              Rakamin Hiring Platform (AI-Powered Collaborative Hiring System)
+            </h3>
+
+            <p class="project-desc">
+              Developed a conceptual AI-powered hiring system to streamline recruitment workflows through intelligent candidate matching and real-time collaboration between recruiters and hiring managers. Designed the product roadmap, defined core features, and conducted user journey mapping to create an efficient and user-centered hiring experience.
+            </p>
+
+            <div class="project-tools">
+              <span>Product Management</span>
+              <span>User Journey</span>
+              <span>AI Concept</span>
+              <span>Roadmap</span>
+              <span>Coda</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://coda.io/d/_dJ6TrtkYVSo/Product-Discovery-1_suy0Y_4Z" target="_blank" class="btn-project">
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+
+          <div class="project-image">
+
+            <div class="project-img-placeholder" style="--ph-color: #5a1a6b">
+              <img src="assets/ieee-paper.png" alt="IEEE Research Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">
+                IEEE Published · Machine Learning
+              </span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              Nutritional Status Classification — IEEE Paper
+            </h3>
+
+            <p class="project-desc">
+              Undergraduate thesis project implementing Naïve Bayes and Support Vector Machine (SVM) algorithms to classify toddlers’ nutritional status using anthropometric data. Focused on improving data accuracy and evaluating algorithm performance within real-world healthcare datasets. The research was published and presented at the International Conference on AI and Mechatronics Systems (AIMS 2025).
+            </p>
+
+            <div class="project-tools">
+              <span>Python</span>
+              <span>Naïve Bayes</span>
+              <span>SVM</span>
+              <span>Machine Learning</span>
+              <span>IEEE Conference</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://ieeexplore.ieee.org/document/11229730"
+                target="_blank"
+                class="btn-project">
+                <span>View Paper</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="project-card reveal">
+
+          <div class="project-image">
+
+            <div class="project-img-placeholder">
+              <img src="assets/sheclub-laurier.png" alt="She&Club x Laurier Campaign Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">
+                Business Development · Campaign Strategy
+              </span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              She&Club x Laurier — #OwnYourFlow
+            </h3>
+
+            <p class="project-desc">
+              Developed a co-creation campaign concept focused on empowering young women and promoting menstrual health awareness through engaging digital and offline experiences. Contributed to campaign ideation, activation planning, audience engagement strategies, and experiential concepts including social media challenges, interactive educational content, and personalized wellness activities.
+            </p>
+
+            <div class="project-tools">
+              <span>Business Development</span>
+              <span>Campaign Strategy</span>
+              <span>Social Media</span>
+              <span>Brand Collaboration</span>
+              <span>Canva</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://www.canva.com/design/DAG4p-0BvmA/BNUnLjSSeZC-QOzub6n5ag/view?utm_content=DAG4p-0BvmA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h89e96298bf"
+                target="_blank"
+                class="btn-project">
+
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-card reveal">
+
+          <div class="project-image">
+
+            <div class="project-img-placeholder">
+              <img src="assets/glowcycle.png" alt="GlowCycle Project Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">
+                Business Plan · IoT Innovation
+              </span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              GlowCycle — IoT-Based Skincare Packaging Recycling System
+            </h3>
+
+            <p class="project-desc">
+              Developed an IoT-based business innovation focused on recycling skincare packaging through a reverse vending machine system. Created under the Faculty Joint Incubations Programme at Bandung Techno Park, the project emphasized technology optimization, business strategy development, market validation, and circular economy implementation through a point-based reward system.
+            </p>
+
+            <div class="project-tools">
+              <span>Business Plan</span>
+              <span>IoT</span>
+              <span>Market Validation</span>
+              <span>Startup Strategy</span>
+              <span>Canva</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://www.canva.com/design/DAGd9KXMjZg/49kcG_AKxF8V-25ZzOYV1g/view?utm_content=DAGd9KXMjZg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h46f4c78b11"
+                target="_blank"
+                class="btn-project">
+
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-card reveal">
+
+          <div class="project-image">
+
+            <div class="project-img-placeholder">
+              <img src="assets/gas-iot.png" alt="IoT Gas Leakage Warning System Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">
+                IoT · Embedded System
+              </span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              Household Gas Leakage Warning System
+            </h3>
+
+            <p class="project-desc">
+              Designed and implemented an IoT-based household gas leakage warning system utilizing gas sensors to detect potential leaks and trigger alert mechanisms through buzzers and notifications. The project focused on improving household safety and preventing domestic accidents through real-time detection and monitoring.
+            </p>
+
+            <div class="project-tools">
+              <span>IoT</span>
+              <span>Sensor</span>
+              <span>Embedded System</span>
+              <span>Arduino</span>
+              <span>Canva</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://www.canva.com/design/DAGTy7SWLZk/um6ChDIeqIn1bH-SyOfukA/edit?utm_content=DAGTy7SWLZk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                target="_blank"
+                class="btn-project">
+
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-card reveal">
+
+          <div class="project-image">
+
+            <div class="project-img-placeholder">
+              <img src="assets/shareeat.png" alt="ShareEat Project Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">
+                Business Plan · Sustainability
+              </span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              ShareEat — Smart Food Sharing Platform
+            </h3>
+
+            <p class="project-desc">
+              Developed a smart food-sharing platform concept connecting restaurants, food vendors, and individuals with surplus food to nearby communities in need. The project focused on sustainability initiatives, food waste reduction, and community engagement through a reward-based donation ecosystem.
+            </p>
+
+            <div class="project-tools">
+              <span>Business Plan</span>
+              <span>Sustainability</span>
+              <span>Food Waste</span>
+              <span>Digital Platform</span>
+              <span>Canva</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://www.canva.com/design/DAGWhW9svOQ/BnXh0JzVcpwwI1mVLQ6-Aw/view?utm_content=DAGWhW9svOQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34e28be06f"
+                target="_blank"
+                class="btn-project">
+
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-card reveal">
+
+          <div class="project-image">
+
+            <div class="project-img-placeholder">
+              <img src="assets/chromify.png" alt="Chromify UI UX Project Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">
+                UI/UX · AI Concept
+              </span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              Chromify — Personalize Your Style with AI Analyzer
+            </h3>
+
+            <p class="project-desc">
+              Designed a mobile application prototype utilizing AI and computer vision concepts to analyze users’ wardrobes and generate personalized outfit recommendations based on individual preferences. Focused on user experience design, interface prototyping, and personalized digital fashion experiences.
+            </p>
+
+            <div class="project-tools">
+              <span>UI/UX Design</span>
+              <span>Figma</span>
+              <span>Computer Vision</span>
+              <span>Mobile App</span>
+              <span>AI Concept</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://www.canva.com/design/DAGUfJIMPXg/hcLRAvArNnCG7BpOorciRQ/view?utm_content=DAGUfJIMPXg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h090eed5113"
+                target="_blank"
+                class="btn-project">
+
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-card reveal">
+
+          <div class="project-image">
+
+            <div class="project-img-placeholder">
+              <img src="assets/funplay-erd.png" alt="FunPlay Database Modeling Preview">
+            </div>
+
+            <div class="project-overlay">
+              <span class="project-tag-badge">
+                Database Design · ERD
+              </span>
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <h3 class="project-title">
+              Database Modeling for FunPlay Application
+            </h3>
+
+            <p class="project-desc">
+              Designed the database architecture for FunPlay, a gamified application developed at PT. Augmented Reality Indonesia, by analyzing system requirements and creating structured data models. Developed Entity-Relationship Diagrams (ERD) and relational schemas to support data integrity, efficiency, scalability, and long-term system maintenance.
+            </p>
+
+            <div class="project-tools">
+              <span>Database Design</span>
+              <span>ERD</span>
+              <span>Relational Schema</span>
+              <span>MySQL</span>
+              <span>System Analysis</span>
+            </div>
+
+            <div class="project-actions">
+
+              <a href="https://www.canva.com/design/DAGPmsrDW5k/WyU6kdSMB0JxCxxQXzBvYw/edit?utm_content=DAGPmsrDW5k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                target="_blank"
+                class="btn-project">
+
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience / Timeline -->
+  <section id="experience" class="experience section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">04 · Experience</span>
+        <h2 class="section-title">My <em>Journey</em></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">Fullstack Web Developer</h3>
+                <p class="tl-company">GoAR Global</p>
+              </div>
+              <span class="tl-date">Dec 2025 – Mar 2026</span>
+            </div>
+            <p class="tl-desc">Developed a vaccination clinic management system featuring vaccine booking dashboards, admin dashboards, patient management, product management, and scheduling calendar modules. Designed database schemas and validation logic to improve data consistency and streamline clinic data management. Contributed to backend and frontend development, including system workflows, interface implementation, and data handling across multiple operational features.</p>
+            <div class="tl-tags"><span>PHP</span><span>MySQL</span><span>HTML/CSS</span><span>Full-Stack</span></div>
+            <span class="tl-badge badge-intern">Professional</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">Web Developer Intern</h3>
+                <p class="tl-company">GoAR Global</p>
+              </div>
+              <span class="tl-date">Apr 2025 – Jun 2025</span>
+            </div>
+            <p class="tl-desc">Contributed to Neovox, a web-based English learning platform — implemented interactive frontend interfaces and backend logic using PHP and MySQL. Designed and optimised database schemas supporting user progress tracking and multi-module content management. Translated functional requirements into sprint-ready features under senior developer supervision.</p>
+            <div class="tl-tags"><span>PHP</span><span>MySQL</span><span>Agile</span><span>Sprint</span></div>
+            <span class="tl-badge badge-intern">Internship</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">Database Architect Intern</h3>
+                <p class="tl-company">GoAR Global</p>
+              </div>
+              <span class="tl-date">Jul 2024 – Aug 2024</span>
+            </div>
+            <p class="tl-desc">Designed and optimized database schemas for the Funplay application project. Created comprehensive ERD documentation for data modeling. Collaborated with developers to align database structures with functional and technical requirements.</p>
+            <div class="tl-tags"><span>MySQL</span><span>ERD</span><span>Database Design</span></div>
+            <span class="tl-badge badge-intern">Internship</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="fas fa-users"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">Liaison Officer — PMM Batch 4 (Modul Nusantara)</h3>
+                <p class="tl-company">BPA Telkom University</p>
+              </div>
+              <span class="tl-date">Feb 2024 – Jun 2024</span>
+            </div>
+            <p class="tl-desc">Coordinated logistics and communication across 10+ events. Identified 3 optimal venues and improved coordination efficiency by ~20%.</p>
+            <div class="tl-tags"><span>Event Management</span><span>Logistics</span><span>Coordination</span></div>
+            <span class="tl-badge badge-org">Organization</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="fas fa-users"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">Liaison Officer — PKKMB 2023</h3>
+                <p class="tl-company">Telkom University</p>
+              </div>
+              <span class="tl-date">Jul 2023 – Sep 2023</span>
+            </div>
+            <p class="tl-desc">Guided 20 new students through campus onboarding. Achieved 95% satisfaction rate in query resolution and 100% attendance accuracy.</p>
+            <div class="tl-tags"><span>Onboarding</span><span>Communication</span></div>
+            <span class="tl-badge badge-org">Organization</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="fas fa-pen"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">Secretary — Core Team</h3>
+                <p class="tl-company">PPU HIMA IF 2021, Telkom University</p>
+              </div>
+              <span class="tl-date">Jan 2023 – Mar 2023</span>
+            </div>
+            <p class="tl-desc">Produced proposals, accountability reports, and meeting minutes supporting transparent organisational operations.</p>
+            <div class="tl-tags"><span>Documentation</span><span>Reporting</span><span>Organisation</span></div>
+            <span class="tl-badge badge-org">Organization</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="fas fa-store"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-title">Marketing Specialist (Part-Time)</h3>
+                <p class="tl-company">Tel-U Goods</p>
+              </div>
+              <span class="tl-date">Jul 2022 – Sep 2022</span>
+            </div>
+            <p class="tl-desc">Acquired 15+ customers and sold 50+ products within one month through direct marketing to Informatics students. Maintained accurate weekly sales reporting and inventory tracking in Excel.</p>
+            <div class="tl-tags"><span>Marketing</span><span>Excel</span><span>Sales Reporting</span></div>
+            <span class="tl-badge badge-vol">Part-time</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates & Awards -->
+  <section id="certificates" class="certificates section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">05 · Certs & Awards</span>
+        <h2 class="section-title">Credentials &amp; <em>Achievements</em></h2>
+      </div>
+
+      <h3 class="cert-section-label reveal">🏆 Achievements</h3>
+      <div class="cert-grid reveal">
+        <a href="assets/neurontara.png" target="_blank" class="cert-link">
+          <div class="cert-card award-card">
+            
+            <div class="cert-icon">
+              <i class="fas fa-trophy" style="color:var(--gold)"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">Neurontara Data Clash 2025</span>
+              <h4 class="cert-name">1st Place — Classification Rumble</h4>
+              <span class="cert-date">Data Science Competition · 2025</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-star"></i>
+            </div>
+
+          </div>
+        </a>
+        <a href="assets/outstanding.jpg" target="_blank" class="cert-link">
+          <div class="cert-card award-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-medal" style="color:#C0C0C0"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">Telkom University — Faculty Level</span>
+              <h4 class="cert-name">Outstanding Graduate Award</h4>
+              <span class="cert-date">3rd Period · Academic Year 2024/2025</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-star"></i>
+            </div>
+
+          </div>
+        </a>
+        <a href="assets/presenter.jpg" target="_blank" class="cert-link">
+          <div class="cert-card award-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-microphone" style="color:var(--blue-accent)"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">AIMS 2025</span>
+              <h4 class="cert-name">Presenter — Int Conference on AI & Mechatronics (AIMS)</h4>
+              <span class="cert-date">International Conference · 2025</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-star"></i>
+            </div>
+
+          </div>
+        </a>
+        <a href="assets/juara3.jpg" target="_blank" class="cert-link">
+          <div class="cert-card award-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-award" style="color:#cd7f32"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">Business Plan Competition — Evolution 2024</span>
+              <h4 class="cert-name">3rd Place + Best Presentation Award</h4>
+              <span class="cert-date">2024</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-star"></i>
+            </div>
+
+          </div>
+        </a>
+        <a href="https://www.instagram.com/p/DCZOYzGvz8f/" target="_blank" class="cert-link">
+          <div class="cert-card award-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-pen-nib" style="color:#e07a7a"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">Profesi Keuangan Expo 2024</span>
+              <h4 class="cert-name">Top 10 Best Essays</h4>
+              <span class="cert-date">2024</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-star"></i>
+            </div>
+
+          </div>
+        </a>
+        <a href="assets/uiux.png" target="_blank" class="cert-link">
+          <div class="cert-card award-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-paint-brush" style="color:#a07ae0"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">UI/UX Competition — Future Vibes 2024</span>
+              <h4 class="cert-name">3rd Place — UI/UX Design</h4>
+              <span class="cert-date">2024</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-star"></i>
+            </div>
+
+          </div>
+        </a>
+      </div>
+
+      <h3 class="cert-section-label reveal" style="margin-top:3rem">📜 Certifications</h3>
+      <div class="cert-grid reveal">
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-book" style="color:var(--blue-accent)"></i></div>
+          <a href="https://ieeexplore.ieee.org/document/11229730" target="_blank" class="cert-link">
+            <div class="cert-body">
+              <span class="cert-issuer">IEEE Conference Paper</span>
+
+              <h4 class="cert-name">
+                Naive Bayes & SVM for Nutritional Status Classification in Kalijambe
+              </h4>
+
+              <span class="cert-date">Published · 2025</span>
+            </div>
+          </a>
+          <div class="cert-corner"><i class="fas fa-certificate"></i></div>
+        </div>
+        <a href="https://www.theforage.com/completion-certificates/SKZxezskWgmFjRvj9/Pchc5rEGyCeozqY5Z_SKZxezskWgmFjRvj9_6932b78c187d49737fd4a044_1765443315408_completion_certificate.pdf" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-chart-bar" style="color:var(--gold)"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">BCG (via Forage)</span>
+
+              <h4 class="cert-name">
+                Introduction to Data for Decision Makers Job Simulation
+              </h4>
+
+              <span class="cert-date">2025</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+        <a href="https://www.theforage.com/completion-certificates/PDmHHPmLyCgdQWzdt/STkypM8iMfn4Gk9BF_PDmHHPmLyCgdQWzdt_6932b78c187d49737fd4a044_1764933234690_completion_certificate.pdf" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-tasks" style="color:#4285F4"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">CBRE (via Forage)</span>
+
+              <h4 class="cert-name">
+                Project Management Job Simulation
+              </h4>
+
+              <span class="cert-date">2025</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+        <a href="https://www.dicoding.com/certificates/6RPNYD715Z2M" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-database" style="color:#00758f"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">Online Course</span>
+
+              <h4 class="cert-name">
+                Introduction to Structured Query Language (SQL)
+              </h4>
+
+              <span class="cert-date">2024</span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+        <a href="https://kinetiksweefep.pintar.co/id/certificate/B1EDED1D59574EB4AAFB4FDAEB2C1E9E" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-lightbulb" style="color:#f4b400"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">
+                KINETIK Australia-Indonesia Partnership
+              </span>
+
+              <h4 class="cert-name">
+                Business Model Canvas: The Best Practice
+              </h4>
+
+              <span class="cert-date">
+                Issued Feb 2026
+              </span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+
+        <a href="https://kinetiksweefep.pintar.co/id/certificate/6FB0072D21B24FBD8607E65DD154E000" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-brain" style="color:#7e57c2"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">
+                KINETIK Australia-Indonesia Partnership
+              </span>
+
+              <h4 class="cert-name">
+                Practical Design Thinking: Creating an Impactful Solution
+              </h4>
+
+              <span class="cert-date">
+                Issued Feb 2026
+              </span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+
+        <a href="https://cert.efset.org/en/bkcmqd" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-language" style="color:#22a699"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">EF SET</span>
+
+              <h4 class="cert-name">
+                EF SET English Certificate 67/100 (C1 Advanced)
+              </h4>
+
+              <span class="cert-date">
+                Issued Sep 2025
+              </span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+
+        <a href="https://www.dicoding.com/certificates/QLZ9V7OJEX5D" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fab fa-python" style="color:#3776ab"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">Dicoding Indonesia</span>
+
+              <h4 class="cert-name">
+                Memulai Pemrograman dengan Python
+              </h4>
+
+              <span class="cert-date">
+                Issued Oct 2024 · Expires Oct 2027
+              </span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+
+        <a href="https://www.dicoding.com/certificates/EYX4J7KWWZDL" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fas fa-chart-line" style="color:#00a86b"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">Dicoding Indonesia</span>
+
+              <h4 class="cert-name">
+                Belajar Dasar Data Science
+              </h4>
+
+              <span class="cert-date">
+                Issued Sep 2024 · Expires Sep 2027
+              </span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/12kxaC47a8KvpERTJAI7tkOhqv97vtwWR/view" target="_blank" class="cert-link">
+          <div class="cert-card">
+
+            <div class="cert-icon">
+              <i class="fab fa-figma" style="color:#a259ff"></i>
+            </div>
+
+            <div class="cert-body">
+              <span class="cert-issuer">MySkill</span>
+
+              <h4 class="cert-name">
+                Figma for UI/UX Design
+              </h4>
+
+              <span class="cert-date">
+                Issued Jul 2023
+              </span>
+            </div>
+
+            <div class="cert-corner">
+              <i class="fas fa-certificate"></i>
+            </div>
+
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">06 · Contact</span>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
+        <p class="section-subtitle">Open to backend engineering, data, application operations, or system reliability roles. Let's talk.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-links">
+            <a href="mailto:rofiahbudi@gmail.com" class="contact-link">
+              <div class="cl-icon"><i class="fas fa-envelope"></i></div>
+              <div class="cl-text">
+                <span class="cl-label">Email</span>
+                <span class="cl-value">rofiahbudi@gmail.com</span>
+              </div>
+              <i class="fas fa-external-link-alt cl-arrow"></i>
+            </a>
+            <a href="https://wa.me/6285876923088" target="_blank" rel="noopener" class="contact-link">
+              <div class="cl-icon"><i class="fab fa-whatsapp"></i></div>
+              <div class="cl-text">
+                <span class="cl-label">WhatsApp</span>
+                <span class="cl-value">+62 858-7692-3088</span>
+              </div>
+              <i class="fas fa-external-link-alt cl-arrow"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-link">
+              <div class="cl-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div class="cl-text">
+                <span class="cl-label">LinkedIn</span>
+                <span class="cl-value">Rofi'ah Budi Nadia</span>
+              </div>
+              <i class="fas fa-external-link-alt cl-arrow"></i>
+            </a>
+          </div>
+          <a href="assets/cv.pdf" download class="btn-cv">
+            <i class="fas fa-download"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+        <div class="contact-form reveal">
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Backend Role / Project Collaboration" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn-send">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+            <div id="formSuccess" class="form-success" style="display:none">
+              <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>RN<span class="logo-bracket">/&gt;</span>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com/rofiahbn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/rofiahbn/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://dribbble.com/rofiahbn" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+          <a href="mailto:rofiahbudi@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/6285876923088" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-quote">
+        <p>"First, solve the problem. Then, write the code."</p>
+        <cite>— John Johnson</cite>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Rofi'ah Budi Nadia · Made with <i class="fas fa-heart"></i> & ☕</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModalDirect()"><i class="fas fa-times"></i></button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
