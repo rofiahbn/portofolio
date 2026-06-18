@@ -1,7 +1,7 @@
 /**
- * PORTFOLIO — RIZKY ADITYA PRATAMA
+ * PORTFOLIO — ROFI'AH BUDI NADIA
  * script.js — Interactive Features
- * Clean, well-commented vanilla JS
+ * Updated to match CV & HTML (June 2026)
  */
 
 /* ============================================
@@ -9,15 +9,12 @@
    ============================================ */
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
-  // Give loader a brief moment to show, then fade out
   setTimeout(() => {
     loader.classList.add('hidden');
-    // Trigger initial reveal animations after loader
     document.body.style.overflow = '';
     revealOnScroll();
     startHeroAnimations();
   }, 2200);
-  // Prevent scroll during load
   document.body.style.overflow = 'hidden';
 });
 
@@ -30,14 +27,12 @@ const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section[id]');
 
 window.addEventListener('scroll', () => {
-  // Add scrolled class for glassmorphism effect
   if (window.scrollY > 60) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
 
-  // Active nav link based on current section
   let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 100;
@@ -53,7 +48,6 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  // Back to Top button visibility
   const backToTop = document.getElementById('backToTop');
   if (window.scrollY > 400) {
     backToTop.classList.add('visible');
@@ -61,13 +55,8 @@ window.addEventListener('scroll', () => {
     backToTop.classList.remove('visible');
   }
 
-  // Skill bars animation on scroll
   animateSkillBars();
-
-  // Animated counters trigger
   animateCounters();
-
-  // Reveal elements on scroll
   revealOnScroll();
 });
 
@@ -83,7 +72,6 @@ hamburger.addEventListener('click', () => {
   navLinksMenu.classList.toggle('open');
 });
 
-// Close menu when a link is clicked
 navLinksMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
@@ -105,7 +93,6 @@ function scrollToSection(id) {
   }
 }
 
-// Smooth scroll for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
@@ -120,7 +107,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Back to top
 document.getElementById('backToTop').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -133,7 +119,6 @@ const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
 const body = document.body;
 
-// Load saved preference
 const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
 applyTheme(savedTheme);
 
@@ -158,20 +143,20 @@ function applyTheme(theme) {
 
 /* ============================================
    6. TYPING ANIMATION (Hero)
+   — Updated to reflect Rofi'ah's actual roles
    ============================================ */
 const typingEl = document.getElementById('typingText');
 const typingStrings = [
-  'Data Analyst',
-  'Project Manager',
-  'Data Science Enthusiast',
-  'Problem Solver',
-  'Storyteller with Data'
+  'data-driven solutions',      // Data Analyst focus (Hacktiv8 bootcamp)
+  'full-stack web systems',     // GoAR Global experience
+  'machine learning models',    // IEEE paper + Neurontara 1st place
+  'database architectures',     // ERD & schema design background
+  'stories from data'           // Analyst storytelling angle
 ];
 
 let typeIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingTimeout;
 
 function startHeroAnimations() {
   typeWriter();
@@ -188,9 +173,8 @@ function typeWriter() {
   if (!isDeleting) {
     charIndex++;
     if (charIndex === current.length) {
-      // Pause at full word
       isDeleting = true;
-      typingTimeout = setTimeout(typeWriter, 2000);
+      setTimeout(typeWriter, 2000);
       return;
     }
   } else {
@@ -202,7 +186,7 @@ function typeWriter() {
   }
 
   const speed = isDeleting ? 60 : 100;
-  typingTimeout = setTimeout(typeWriter, speed);
+  setTimeout(typeWriter, speed);
 }
 
 
@@ -213,10 +197,9 @@ function revealOnScroll() {
   const revealEls = document.querySelectorAll('.reveal');
   const windowH = window.innerHeight;
 
-  revealEls.forEach((el, i) => {
+  revealEls.forEach(el => {
     const rect = el.getBoundingClientRect();
     if (rect.top < windowH - 60) {
-      // Stagger delay for grouped elements
       const delay = el.dataset.delay || 0;
       setTimeout(() => {
         el.classList.add('visible');
@@ -225,7 +208,6 @@ function revealOnScroll() {
   });
 }
 
-// Add stagger delays to children groups
 function setupRevealDelays() {
   const groups = [
     '.strength-cards .strength-card',
@@ -265,7 +247,8 @@ function animateSkillBars() {
 
 
 /* ============================================
-   9. ANIMATED COUNTERS (Stats)
+   9. ANIMATED COUNTERS (Hero Stats)
+   — Synced with HTML: 1+ Years Exp, 6+ Awards, 1 IEEE Paper
    ============================================ */
 let countersStarted = false;
 
@@ -279,7 +262,7 @@ function animateCounters() {
     document.querySelectorAll('.stat-number[data-count]').forEach(el => {
       const target = parseInt(el.getAttribute('data-count'));
       let current = 0;
-      const increment = target / 30;
+      const increment = Math.max(target / 30, 1);
       const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -296,106 +279,11 @@ function animateCounters() {
 
 /* ============================================
    10. PROJECT MODAL
+   — Modal close handlers kept in case modal is used later.
+     To add modal to a project card, use onclick="openModal()"
+     and define the content inside that function.
    ============================================ */
-const projectData = {
-  ml: {
-    title: 'Nutritional Status Classification',
-    subtitle: 'Machine Learning · Python · Streamlit',
-    desc: `Built an end-to-end machine learning pipeline to classify children's nutritional status (stunting, wasting, normal, and overweight) using WHO-standard anthropometric indicators — height, weight, age, and sex.
-
-The model was trained on a dataset of 8,000+ children across East Java. After extensive feature engineering and model comparison (Logistic Regression, Decision Tree, Random Forest, XGBoost), the final Random Forest model achieved 94.2% accuracy on the test set.
-
-The project was deployed as an interactive Streamlit web app and presented to health workers at a local Puskesmas for pilot testing.`,
-    highlights: [
-      '94.2% accuracy with Random Forest classifier',
-      'Processed 8,000+ pediatric records from POSYANDU data',
-      'Built interactive Streamlit dashboard for non-technical users',
-      'Presented to health workers — received adoption approval',
-      'Feature importance visualization using SHAP values'
-    ],
-    tools: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'XGBoost', 'SHAP', 'Streamlit', 'Matplotlib']
-  },
-  iot: {
-    title: 'Gas Leakage Detection IoT System',
-    subtitle: 'IoT · ESP8266 · Firebase',
-    desc: `Designed and implemented a real-time gas leakage detection system for household safety. The system uses MQ-2 gas sensors connected to an ESP8266 NodeMCU microcontroller, which transmits readings to Firebase Realtime Database every 2 seconds.
-
-A Python-based monitoring dashboard visualizes live sensor data, and automated SMS alerts via Twilio API notify registered users when gas concentrations exceed safe thresholds. The project won 2nd place at the campus IoT Hackathon 2023.`,
-    highlights: [
-      'Real-time gas concentration monitoring (2s refresh)',
-      'Automated SMS alerts via Twilio API integration',
-      'Firebase Realtime Database for cloud data storage',
-      'Custom Python dashboard with live data charts',
-      '2nd place — Campus IoT Hackathon 2023'
-    ],
-    tools: ['Arduino C++', 'ESP8266', 'MQ-2 Sensor', 'Firebase', 'Python', 'Twilio API', 'Matplotlib']
-  },
-  uiux: {
-    title: 'Waste Management App UI/UX',
-    subtitle: 'UI/UX Design · Figma · User Research',
-    desc: `Led the complete UX design process for a smart waste management mobile application aimed at helping urban residents separate, schedule pickups, and earn rewards for proper waste disposal.
-
-The process included 15+ user interviews, persona development, competitive analysis, journey mapping, and 3 rounds of usability testing. The final prototype achieved an 87% task completion rate and a System Usability Scale (SUS) score of 81 — above industry benchmark.`,
-    highlights: [
-      '15+ in-depth user interviews and survey analysis',
-      'Complete user persona and journey map documentation',
-      '3 rounds of usability testing with real users',
-      'SUS score of 81 — "Excellent" benchmark',
-      '87% task completion rate on key user flows'
-    ],
-    tools: ['Figma', 'Miro', 'FigJam', 'Maze (usability testing)', 'Notion', 'Adobe Illustrator']
-  },
-  dashboard: {
-    title: 'Sales Analysis Dashboard',
-    subtitle: 'Data Analytics · Power BI · SQL',
-    desc: `Built an end-to-end sales analytics solution for a mid-sized retail company with 12 branch locations across Java. The project involved extracting, cleaning, and transforming 500,000+ transactional records using SQL and Python, then building an interactive Power BI dashboard for management use.
-
-Key insights uncovered included seasonal revenue patterns, underperforming product categories, and high-churn customer segments. The dashboard reduced weekly reporting time from 6 hours to under 30 minutes.`,
-    highlights: [
-      'Processed 500K+ transactions from 12 branches',
-      'Reduced manual reporting time by 83% (6hrs → 30min)',
-      '20% improvement in reporting efficiency reported by management',
-      'Identified 3 key revenue-driving product segments',
-      'Integrated with live SQL database for auto-refresh'
-    ],
-    tools: ['Power BI', 'SQL (PostgreSQL)', 'Python', 'Pandas', 'Excel', 'DAX', 'Power Query']
-  }
-};
-
-function openModal(key) {
-  const data = projectData[key];
-  if (!data) return;
-
-  const highlightsHTML = data.highlights
-    .map(h => `<div class="modal-highlight"><i class="fas fa-check-circle"></i><span>${h}</span></div>`)
-    .join('');
-
-  const toolsHTML = data.tools
-    .map(t => `<span>${t}</span>`)
-    .join('');
-
-  // Split description by double newline for paragraphs
-  const descHTML = data.desc
-    .split('\n\n')
-    .map(p => `<p class="modal-desc">${p.trim()}</p>`)
-    .join('');
-
-  document.getElementById('modalContent').innerHTML = `
-    <h2 class="modal-title">${data.title}</h2>
-    <p class="modal-subtitle">${data.subtitle}</p>
-    ${descHTML}
-    <h4 style="font-family:var(--font-heading);font-size:.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;">Key Highlights</h4>
-    <div class="modal-highlights">${highlightsHTML}</div>
-    <h4 style="font-family:var(--font-heading);font-size:.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;margin-top:1.25rem;">Tools & Technologies</h4>
-    <div class="modal-tools">${toolsHTML}</div>
-  `;
-
-  document.getElementById('projectModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
 function closeModal(event) {
-  // Only close if clicking the overlay itself (not the box)
   if (event.target === document.getElementById('projectModal')) {
     closeModalDirect();
   }
@@ -406,7 +294,6 @@ function closeModalDirect() {
   document.body.style.overflow = '';
 }
 
-// Close modal with Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModalDirect();
 });
@@ -417,25 +304,21 @@ document.addEventListener('keydown', (e) => {
    ============================================ */
 function handleFormSubmit(e) {
   const btn = e.target.querySelector('.btn-send');
-
-  btn.innerHTML =
-    '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   btn.disabled = true;
 }
+
 
 /* ============================================
    12. MICRO INTERACTIONS
    ============================================ */
-
-// Nav link hover ripple feel (via CSS ::after already, but add JS tracking)
 navLinks.forEach(link => {
   link.addEventListener('mouseenter', function() {
     this.style.setProperty('--hover-x', '50%');
   });
 });
 
-// Tech card tilt effect on desktop hover
+// Tilt effect on tech & cert cards
 document.querySelectorAll('.tech-card, .cert-card').forEach(card => {
   card.addEventListener('mousemove', function(e) {
     const rect = this.getBoundingClientRect();
@@ -448,7 +331,7 @@ document.querySelectorAll('.tech-card, .cert-card').forEach(card => {
   });
 });
 
-// Smooth active state on project cards
+// Press effect on project cards
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mousedown', function() {
     this.style.transform = 'translateY(-3px) scale(0.99)';
@@ -460,9 +343,8 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 
 /* ============================================
-   13. SCROLL PROGRESS (Optional visual touch)
+   13. SCROLL PROGRESS BAR
    ============================================ */
-// Creates a thin gold progress bar at top of page
 const progressBar = document.createElement('div');
 progressBar.style.cssText = `
   position: fixed; top: 0; left: 0; z-index: 1001;
@@ -486,9 +368,8 @@ window.addEventListener('scroll', () => {
    14. INIT ON DOM READY
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Initial call for elements in viewport on load
   setTimeout(() => {
     revealOnScroll();
     animateCounters();
-  }, 2400); // after loader fades
+  }, 2400);
 });
